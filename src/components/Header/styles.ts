@@ -4,6 +4,8 @@ export const HeaderContainer = styled.header`
   padding: 2rem 10rem;
   
   #header-div {
+    max-width: 70rem;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: space-between;

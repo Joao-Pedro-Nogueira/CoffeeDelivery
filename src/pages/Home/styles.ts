@@ -1,25 +1,28 @@
 import styled from "styled-components";
 
 export const HomeIntroContainer = styled.section`
-  #home-div {
-    margin-top: 0.125rem;
+    
+    #home-div {
+    max-width: 90rem; 
+    margin: 0 auto;
+    padding: 5.75rem 10rem;
     display: flex;
     justify-content: space-between;
-    padding: 5.75rem 10rem;
+    gap: 3.5rem;
   }
-
+  
   #content-home-div {
     display: flex;
     flex-direction: column;
     gap: 4.125rem;
     align-items: flex-start;
   }
-
+  
   #title-home-div {
+    margin-top: 0.125rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 36.75rem;
   }
 
   #title-home-div h1 {
