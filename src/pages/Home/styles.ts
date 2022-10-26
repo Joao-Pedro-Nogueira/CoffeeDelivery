@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-export const HomeIntroContainer = styled.section`
-    
-    #home-div {
+export const HomeContainer = styled.section`
     max-width: 90rem; 
     margin: 0 auto;
-    padding: 5.75rem 10rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 3.5rem;
-  }
+`
+
+export const IntroContainer = styled.section`
+
+  padding: 5.75rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.5rem;
   
   #content-home-div {
     display: flex;
@@ -29,6 +30,7 @@ export const HomeIntroContainer = styled.section`
     font-family: 'Baloo 2', cursive;
     font-size: ${({ theme }) => theme.textSizes["title-title-xl"]};
     color: ${({theme }) => theme.colors["base-title"]};
+    line-height: 130%;
   }
 
   #title-home-div p {
@@ -58,5 +60,18 @@ export const HomeIntroContainer = styled.section`
     font-family: 'Roboto', sans-serif;
     font-size: ${({ theme }) => theme.textSizes["text-regular-m"]};
     color: ${({theme }) => theme.colors["base-text"]};
+  }
+`
+
+export const MenuContainer = styled.section`
+
+  padding: 2rem 10rem;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-family: 'Baloo 2', cursive;
+    color: ${({theme }) => theme.colors["base-subtitle"]};
+    font-size: ${({ theme }) => theme.textSizes["title-title-l"]};
+    margin-bottom: 3.5rem;
   }
 `

@@ -1,14 +1,15 @@
-import { HomeIntroContainer } from "./styles";
+import { HomeContainer, IntroContainer, MenuContainer } from "./styles";
 import homeImage from '../../assets/home/home-image.svg'
 import cartIcon from '../../assets/home/home-cart-icon.svg'
 import timeIcon from '../../assets/home/home-time-icon.svg'
 import boxIcon from '../../assets/home/home-box-icon.svg'
 import coffeeIcon from '../../assets/home/home-coffee-icon.svg'
+import { MenuItem } from "../../components/MenuItem";
 
 export function HomePage() {
   return (
-    <HomeIntroContainer>
-      <div id="home-div">
+    <HomeContainer>
+      <IntroContainer>
         <div id="secondary-home-div">
           <div id="content-home-div">
             <div id="title-home-div">
@@ -43,7 +44,13 @@ export function HomePage() {
         <div>
           <img src={homeImage} />
         </div>
-      </div>
-    </HomeIntroContainer>
+      </IntroContainer>
+      <MenuContainer>
+        <h2>Nossos Cafés</h2>
+        <div>
+          <MenuItem />
+        </div>
+      </MenuContainer>
+    </HomeContainer>
   )
 }

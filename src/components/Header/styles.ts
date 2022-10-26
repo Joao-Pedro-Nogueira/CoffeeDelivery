@@ -11,7 +11,6 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     background-color: ${({ theme }) => theme.colors["base-background"]};
-;
   }
 
   #header-secondary-div {
