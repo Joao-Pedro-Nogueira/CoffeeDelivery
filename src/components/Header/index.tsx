@@ -1,22 +1,26 @@
-import { HeaderContainer } from "./styles";
+import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from "./styles";
 import CoffeeLogo from '../../assets/header/header-logo.svg'
-import LocalIcon from '../../assets/header/local-icon.svg'
-import cartIcon from '../../assets/header/cart-icon.svg'
+import { MapPin, ShoppingCart } from 'phosphor-react'
+import { useTheme } from "styled-components";
 
 export function Header() {
+
+  const theme = useTheme()
+
   return(
     <HeaderContainer>
-      <div id="header-div">
-        <img src={CoffeeLogo}/>
-        <div id="header-secondary-div">
-          <div id="local-div">
-            <img src={LocalIcon} />
+      <div className="container">
+        <img src={CoffeeLogo} />
+
+        <HeaderButtonsContainer>
+          <HeaderButton variant="purple">
+            <MapPin size={20} weight='fill'/>
             Campo Grande, MS
-          </div>
-          <div id="cart-div">
-            <img src={cartIcon} />
-          </div>
-        </div>
+          </HeaderButton>
+          <HeaderButton variant='yellow'>
+            <ShoppingCart size={20} weight='fill'/>
+          </HeaderButton>
+        </HeaderButtonsContainer>
       </div>
     </HeaderContainer>
   )
