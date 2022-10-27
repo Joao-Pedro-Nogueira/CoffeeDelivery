@@ -1,5 +1,5 @@
 import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from "./styles";
-import CoffeeLogo from '../../assets/header/header-logo.svg'
+import CoffeeLogo from '../../assets/header-logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { useTheme } from "styled-components";
 
