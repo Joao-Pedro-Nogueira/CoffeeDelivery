@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import introBackgroundImg from '../../../../assets/intro-background.svg'
 import { rgba } from 'polished'
+import { TitleText } from "../../../../components/TextsComponents";
 
 export const IntroContainer = styled.section`
   width: 100%;
@@ -8,11 +9,15 @@ export const IntroContainer = styled.section`
   background: ${({ theme }) => `url(${introBackgroundImg}) no-repeat center,
       linear-gradient(
         0deg,
-        ${theme.colors["base-white"]} 0%,
-        ${rgba(theme.colors["base-background"], 0.2)} 50%,
+        ${theme.colors["base-background"]} 0%,
+        ${rgba(theme.colors["base-background"], 0.05)} 50%,
         ${theme.colors["base-background"]} 100%
       )`};
   background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const IntroContent = styled.div`
@@ -20,4 +25,17 @@ export const IntroContent = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
+`
+
+export const IntroTitle = styled(TitleText)`
+  margin-bottom: 1rem;
+`
+
+export const InfosContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.25rem;
+  margin-top: 4.125rem;
+  justify-content: flex-start;
 `

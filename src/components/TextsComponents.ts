@@ -20,7 +20,7 @@ interface RegularTextProps {
   weight?: string | number
 }
 
-export const ReglarText = styled.p<RegularTextProps>`
+export const RegularText = styled.p<RegularTextProps>`
   font-family: ${({theme})=> theme.fonts.regular};
   font-size: ${({theme, size, weight})=> theme.textSizes[`text-regular-${size ?? 'm'}`]};
   font-weight: ${({weight}) => [`${weight ?? 400}`]};
