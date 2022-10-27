@@ -3,7 +3,9 @@ import styled from "styled-components";
 interface TitleTextProps {
   size?: 'xl' | 'l' | 'm' | 's' | 'xs',
   color?: 'title' | 'subtitle' | 'text',
-  weight?: string | number
+  weight?: string | number,
+  marginTop?: number,
+  marginBottom?: number
 }
 
 export const TitleText = styled.h1<TitleTextProps>`
@@ -12,12 +14,16 @@ export const TitleText = styled.h1<TitleTextProps>`
   color: ${({theme, color})=> theme.colors[`base-${color ?? 'title'}`]};
   line-height: 130%;
   font-weight: ${({ weight })=> [`${weight ?? 800}`]};
+  margin-top: ${({marginTop})=> [`${marginTop ?? 0}rem`]};
+  margin-bottom: ${({marginBottom})=> [`${marginBottom ?? 0}rem`]};
 `
 
 interface RegularTextProps {
   size?: 'l' | 'm' | 's',
-  color?: 'label' | 'subtitle' | 'text',
-  weight?: string | number
+  color?: 'label' | 'subtitle' | 'text' | 'title',
+  weight?: string | number,
+  marginTop?: number,
+  marginBottom?: number
 }
 
 export const RegularText = styled.p<RegularTextProps>`
@@ -26,4 +32,6 @@ export const RegularText = styled.p<RegularTextProps>`
   font-weight: ${({weight}) => [`${weight ?? 400}`]};
   color: ${({theme, color})=> theme.colors[`base-${color ?? 'title'}`]};
   line-height: 130%;
+  margin-top: ${({marginTop})=> [`${marginTop ?? 0}rem`]};
+  margin-bottom: ${({marginBottom})=> [`${marginBottom ?? 0}rem`]};
 `
