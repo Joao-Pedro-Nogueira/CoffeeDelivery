@@ -8,7 +8,7 @@ export const InputContainer = styled.input`
   padding: 0.75rem;
   transition: 0.15s;
   
-  &:checked {
+  &:focus {
     border-color: ${({theme}) => theme.colors["brand-yellow-dark"]};
   }
 

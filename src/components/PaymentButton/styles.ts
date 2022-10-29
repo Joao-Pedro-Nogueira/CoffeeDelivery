@@ -16,6 +16,11 @@ export const PaymentButtonStyles = styled.button`
     border: 1px solid ${({theme}) => theme.colors["brand-purple"]};
   }
 
+  &:checked {
+    background-color: ${({theme}) => theme.colors["brand-purple-light"]};
+    border: 1px solid ${({theme}) => theme.colors["brand-purple"]};  
+  }
+
   &:hover {
   background-color: ${({theme}) => theme.colors["base-hover"]};
   }
