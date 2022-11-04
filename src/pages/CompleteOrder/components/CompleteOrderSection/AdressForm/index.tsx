@@ -1,4 +1,4 @@
-import { Input } from "../../../../components/Input/indes";
+import { Input } from "../../../../../components/Input/indes";
 import { AddressFormContainer } from "./style";
 
 export function AddressForm() {

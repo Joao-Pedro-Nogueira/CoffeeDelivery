@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const QuantitySelectorContainer = styled.div`
+interface QuantitySelectorContainerProps {
+  size?: 'small'| 'medium',
+}
+
+export const QuantitySelectorContainer = styled.div<QuantitySelectorContainerProps>`
   flex: 1;
   background: ${({ theme }) => theme.colors['base-button']};
   display: flex;
@@ -8,7 +12,6 @@ export const QuantitySelectorContainer = styled.div`
   justify-content: center;
   gap: 4px;
   border-radius: 6px;
-  padding: 0.5rem;
   height: 2.375rem;
 
   input {
@@ -22,6 +25,14 @@ export const QuantitySelectorContainer = styled.div`
   & focus {
     outline: none;
   }
+
+  ${({size}) => size === 'medium' && css`
+    padding: 0.5rem;
+  `}
+
+  ${({size}) => size === 'small' && css`
+    padding: 0.3rem 0.5rem;
+  `}
 `
 
 export const SelectorButton = styled.button.attrs({

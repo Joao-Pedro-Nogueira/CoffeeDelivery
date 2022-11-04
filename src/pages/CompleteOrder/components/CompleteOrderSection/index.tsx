@@ -1,7 +1,7 @@
 import { MapPinLine, CurrencyDollar } from "phosphor-react";
 import { useTheme } from "styled-components";
 import { RegularText, TitleText } from "../../../../components/TextsComponents";
-import { AddressForm } from "../AdressForm";
+import { AddressForm } from "./AdressForm";
 import { CardTitle, CompleteOrderContainer, FormCard } from "./styles";
 
 export function CompleteOrderSection() {

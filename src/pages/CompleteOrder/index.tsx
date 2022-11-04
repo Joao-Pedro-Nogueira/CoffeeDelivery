@@ -1,21 +1,18 @@
 import { TitleText } from "../../components/TextsComponents";
-import {  CompleteOrderPageContainer, FormsContainer, SelectedCoffeesContainer } from "./styles";
+import {  CompleteOrderContainer, FormsContainer } from "./styles";
 import { MapPinLine } from "phosphor-react";
-import { CompleteOrderSection } from "./components/CompleteOrderSection/CompleteOrder";
-import { SelectedCoffeesSection } from "./components/SelectedCoffeesSection";
+import { CompleteOrderSection } from "./components/CompleteOrderSection";
+import { PaymentSection } from "./components/CompleteOrderSection/PaymentSection";
+import { SelectedCoffesSection } from "./components/SelectedCoffeesSection";
 
 export function CompleteOrderPage() {
   return(
-    <CompleteOrderPageContainer className="container">
+    <CompleteOrderContainer className="container">
       <FormsContainer>
         <CompleteOrderSection />
-        <SelectedCoffeesSection />
+        <PaymentSection />
       </FormsContainer>
-      <SelectedCoffeesContainer>
-        <TitleText size="xs" color="subtitle">
-          Cafés selecionados
-        </TitleText>
-      </SelectedCoffeesContainer>
-    </CompleteOrderPageContainer>
+      <SelectedCoffesSection />
+    </CompleteOrderContainer>
   )
 }

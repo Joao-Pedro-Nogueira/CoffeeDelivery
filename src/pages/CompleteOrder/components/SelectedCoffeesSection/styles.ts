@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const ButtonsContainer = styled.div`
+export const SelectedCoffeesContainer = styled.section`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
 `

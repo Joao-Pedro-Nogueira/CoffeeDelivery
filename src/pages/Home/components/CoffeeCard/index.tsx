@@ -1,7 +1,7 @@
 import { ShoppingCart } from "phosphor-react";
 import { QuantitySelector } from "../../../../components/QuantitySelector";
 import { RegularText, TitleText } from "../../../../components/TextsComponents";
-import { formatMoney } from "../../../../utils/format-money";
+import { formatMoney } from "../../../../utilities/format-money";
 import { AddCartWrapper, CardFooter, CoffeeCardContainer, Tag } from "./styles";
 
 export interface Coffee {
