@@ -9,6 +9,9 @@ export function ConfirmOrderCard() {
       <SelectedCoffeeItem />
       <SelectedCoffeeItem />
       <SelectedCoffeeItem />
+      <SelectedCoffeeItem />
+      <SelectedCoffeeItem />
+      <SelectedCoffeeItem />
       <ConfirmationSection />
       <BasicButton content='Confirmar pedido' />
     </SelectedCoffeesCardContainer>

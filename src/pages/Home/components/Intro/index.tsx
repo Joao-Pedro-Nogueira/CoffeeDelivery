@@ -1,7 +1,7 @@
 import { InfosContainer, IntroContainer, IntroContent, IntroTitle } from "./styles";
 import IntroImg from '../../../../assets/intro-image.svg'
 import { RegularText } from "../../../../components/TextsComponents";
-import { InfoItem } from "../../../../components/InfosItem";
+import { InfoItem } from "../../../../components/InfoItem";
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
 import { useTheme } from "styled-components";
 

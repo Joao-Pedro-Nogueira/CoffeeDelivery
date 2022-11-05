@@ -6,4 +6,5 @@ export const SelectedCoffeesContainer = styled.section`
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
+  margin-bottom: 2.5rem;
 `
