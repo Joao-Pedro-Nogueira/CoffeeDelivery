@@ -1,7 +1,21 @@
 import { RegularText, TitleText } from "../../../../../components/TextsComponents";
+import { useCart } from "../../../../../hooks/useCart";
+import { formatMoney } from "../../../../../utilities/format-money";
 import { ConfirmationSectionContainer } from "./styles";
 
+const DELIVERY_PRICE = 3.5
+
 export function ConfirmationSection() {
+
+  const { cartItemsTotalPrice, cartQuantity } = useCart()
+  
+  const totalPrice = cartItemsTotalPrice + DELIVERY_PRICE
+
+  const formattedCartTotalPrice = formatMoney(cartItemsTotalPrice)
+  const formattedDelivaryPrice = formatMoney(DELIVERY_PRICE)
+  const formattedTotalPrice = formatMoney(totalPrice)
+
+
   return(
     <ConfirmationSectionContainer>
       <div>
@@ -9,15 +23,15 @@ export function ConfirmationSection() {
           Total de itens
         </RegularText>
         <RegularText>
-          R$ 9,90
+          R$ {formattedCartTotalPrice}
         </RegularText>
       </div>
       <div>
         <RegularText size="s">
-          Entraga
+          Entrega
         </RegularText>
         <RegularText>
-          R$ 3,50
+          R$ {formattedDelivaryPrice}
         </RegularText>
       </div>
       <div>
@@ -25,9 +39,10 @@ export function ConfirmationSection() {
           Total
         </RegularText>
         <RegularText weight="700" size="l" color="subtitle">
-          R$ 13,40
+          {formattedTotalPrice}
         </RegularText>
       </div>
+
     </ConfirmationSectionContainer>
   )
 }

@@ -1,19 +1,20 @@
 import { BasicButton } from '../../../../../components/BasicButton'
+import { useCart } from '../../../../../hooks/useCart'
 import { ConfirmationSection } from '../ConfirmationSection'
 import { SelectedCoffeeItem } from '../SelectedCoffeeItem'
 import { SelectedCoffeesCardContainer } from './styles'
 
 export function ConfirmOrderCard() {
+
+  const { cartItems, cartQuantity } = useCart()
+
   return(
     <SelectedCoffeesCardContainer>
-      <SelectedCoffeeItem />
-      <SelectedCoffeeItem />
-      <SelectedCoffeeItem />
-      <SelectedCoffeeItem />
-      <SelectedCoffeeItem />
-      <SelectedCoffeeItem />
+      {cartItems.map(item => (
+        <SelectedCoffeeItem key={item.id} coffee={item} />
+      ))}
       <ConfirmationSection />
-      <BasicButton content='Confirmar pedido' />
+      <BasicButton disabled={cartQuantity <= 0} content='Confirmar pedido' />
     </SelectedCoffeesCardContainer>
   )
 }

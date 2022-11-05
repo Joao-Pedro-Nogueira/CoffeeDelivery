@@ -7,6 +7,9 @@ export const InputContainer = styled.input`
   border: 2px solid ${({theme}) => theme.colors["base-button"]};
   padding: 0.75rem;
   transition: 0.15s;
+  color: ${({theme}) => theme.colors["base-text"]};
+  font-size: ${({theme}) => theme.textSizes["text-regular-s"]};
+  font-size: 0.75rem;
   
   &:focus {
     border-color: ${({theme}) => theme.colors["brand-yellow-dark"]};
@@ -17,7 +20,4 @@ export const InputContainer = styled.input`
     font-size: ${({theme}) => theme.textSizes["text-regular-s"]};
   }
 
-  color: ${({theme}) => theme.colors["base-text"]};
-  font-size: ${({theme}) => theme.textSizes["text-regular-s"]};
-  font-size: 0.75rem;
 `
