@@ -1,19 +1,22 @@
-import { ReactNode } from "react";
+import { InputHTMLAttributes, ReactNode } from "react";
 import { RegularText } from "../TextsComponents";
-import { PaymentButtonStyles } from "./styles"
+import { PaymentButtonStyles, ContentContainer } from "./styles"
 
-interface PaymentButtonProps {
+type PaymentButtonProps = InputHTMLAttributes<HTMLInputElement> & {
   icon: ReactNode,
   content: string
 }
 
-export function PaymentButton({ icon, content }: PaymentButtonProps) {
+export function PaymentButton({ id, icon, content, ...props }: PaymentButtonProps) {
   return(
     <PaymentButtonStyles>
-      {icon}
-      <p>
-        {content}
-      </p>
+      <input id={id} type="radio" {...props} name="PaymentButton" />
+      <label htmlFor={id}>
+        <ContentContainer>
+          {icon}
+          {content}
+        </ContentContainer>
+      </label>
     </PaymentButtonStyles>
   )
 }

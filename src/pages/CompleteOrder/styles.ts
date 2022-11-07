@@ -1,16 +1,16 @@
+
 import styled from "styled-components";
 
-export const CompleteOrderContainer = styled.section`
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-`
-
-export const FormsContainer = styled.div`
+export const CompleteOrderContainer = styled.form`
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
-`
+  justify-content: space-between;
+  gap: 2rem;
+`;
 
+export const SectionBaseStyle = styled.div`
+  width: 100%;
+  background: ${({ theme }) => theme.colors["base-card"]};
+  border-radius: 6px;
+  padding: 2.5rem;
+`;

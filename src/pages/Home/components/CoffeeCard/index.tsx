@@ -3,7 +3,7 @@ import { useState } from "react";
 import { QuantitySelector } from "../../../../components/QuantitySelector";
 import { RegularText, TitleText } from "../../../../components/TextsComponents";
 import { useCart } from "../../../../hooks/useCart";
-import { formatMoney } from "../../../../utilities/format-money";
+import { formatMoney } from "../../../../utils/formatMoney";
 import { AddCartWrapper, CardFooter, CoffeeCardContainer, Tag } from "./styles";
 
 export interface Coffee {
