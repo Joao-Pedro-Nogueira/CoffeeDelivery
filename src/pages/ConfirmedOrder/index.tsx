@@ -31,7 +31,7 @@ export function ConfirmedOrderPage() {
   return (
     <OrderConfirmedContainer className="container">
       <div>
-        <TitleText size="l">Uhu! Pedido confirmado</TitleText>
+        <TitleText size="l">Pedido confirmado!</TitleText>
         <RegularText size="l" color="subtitle">
           Agora é só aguardar que logo o café chegará até você
         </RegularText>
