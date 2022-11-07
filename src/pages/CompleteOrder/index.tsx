@@ -7,32 +7,53 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 
-const confirmOrderValidationSchema = zod.object({
-  cep: zod.string().min(8, "Informe o CEP"),
-  street: zod.string().min(1, "Informe a rua"),
-  number: zod.string().min(1, "Informe o número"),
+enum PaymentMethods {
+  credit = "credit",
+  debit = "debit",
+  money = "money",
+}
+
+const confirmOrderFormValidationSchema = zod.object({
+  cep: zod.string().min(1, "Informe o CEP"),
+  street: zod.string().min(1, "Informe o Rua"),
+  number: zod.string().min(1, "Informe o Número"),
   complement: zod.string(),
-  district: zod.string().min(1, "Informe o bairro"),
-  city: zod.string().min(1, "Informe a cidade"),
-  uf: zod.string().min(2, "Informe o estado"),
-})
+  district: zod.string().min(1, "Informe o Bairro"),
+  city: zod.string().min(1, "Informe a Cidade"),
+  uf: zod.string().min(1, "Informe a UF"),
+  paymentMethod: zod.nativeEnum(PaymentMethods, {
+    errorMap: () => {
+      return { message: "Informe o método de pagamento" };
+    },
+  }),
+});
 
-type ConfirmOrderFormData = OrderData 
+export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>;
 
-export type OrderData = zod.infer<typeof confirmOrderValidationSchema>
+type ConfirmOrderFormData = OrderData;
 
 export function CompleteOrderPage() {
-
   const confirmOrderForm = useForm<ConfirmOrderFormData>({
-    resolver: zodResolver(confirmOrderValidationSchema)
-  })
+    resolver: zodResolver(confirmOrderFormValidationSchema),
+    defaultValues: {
+      paymentMethod: undefined,
+    },
+  });
 
-  const {handleSubmit} = confirmOrderForm
+  const { handleSubmit } = confirmOrderForm;
+
+  const navigate = useNavigate();
+  const { cleanCart } = useCart();
 
   function handleConfirmOrder(data: ConfirmOrderFormData) {
+    navigate("/ConfirmedOrder", {
+      state: data,
+    });
+    cleanCart();
+
     console.log(data)
   }
-  
+
   return (
     <FormProvider {...confirmOrderForm}>
       <CompleteOrderContainer

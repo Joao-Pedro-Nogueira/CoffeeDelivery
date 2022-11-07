@@ -1,59 +1,82 @@
 import { RegularText, TitleText } from "../../components/TextsComponents";
-import { ConfirmedOrderContainer, OrderDetailsContainer } from "./styles";
-import Ilustration from "../../assets/confirmed-order-ilustration.svg"
+import { OrderConfirmedContainer, OrderDetailsContainer } from "./styles";
+import confirmedOrderIllustration from "../../assets/confirmed-order-ilustration.svg";
 import { InfoItem } from "../../components/InfoItem";
-import { MapPin, CurrencyDollar, Clock } from "phosphor-react";
 import { useTheme } from "styled-components";
+import { MapPin, Clock, CurrencyDollar } from "phosphor-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { OrderData } from "../CompleteOrder";
+import { paymentMethods } from "../CompleteOrder/components/CompleteOrderForm/PaymentMethodOptions";
+import { useEffect } from "react";
+
+interface LocationType {
+  state: OrderData;
+}
 
 export function ConfirmedOrderPage() {
+  const { colors } = useTheme();
 
-  const {colors} =useTheme()
+  const { state } = useLocation() as unknown as LocationType;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!state) {
+      navigate("/");
+    }
+  }, []);
+
+  if (!state) return <></>;
+
   return (
-    <ConfirmedOrderContainer className="container">
+    <OrderConfirmedContainer className="container">
       <div>
-        <TitleText size='l'>Uhuul! Pedido confirmado</TitleText>
-        <RegularText>Agora é só aguardar que logo o café chegará até você</RegularText>
+        <TitleText size="l">Uhu! Pedido confirmado</TitleText>
+        <RegularText size="l" color="subtitle">
+          Agora é só aguardar que logo o café chegará até você
+        </RegularText>
       </div>
 
       <section>
         <OrderDetailsContainer>
-          <InfoItem 
-            icon={<MapPin weight="fill" size={16} />}
+          <InfoItem
+            icon={<MapPin weight="fill" />}
             iconColor={colors["brand-purple"]}
             text={
-            <RegularText color="text">
-              Entrega em <strong>Rua Tv. Ana Vani, 51</strong>
-              <br />
-              Centro, Campo Grande - MS
-            </RegularText>
+              <RegularText>
+                Entrega em <strong>{state.street}</strong>, {state.number}
+                <br />
+                {state.district} - {state.city}, {state.uf}
+              </RegularText>
             }
           />
-          <InfoItem 
-            icon={<Clock weight="fill" size={16} />}
+
+          <InfoItem
+            icon={<Clock weight="fill" />}
             iconColor={colors["brand-yellow"]}
             text={
-            <RegularText color="text">
-              Previsão de entrega
-              <br />
-              <strong>20 min - 30 min</strong>
-            </RegularText>
+              <RegularText>
+                Previsão de entrega
+                <br />
+                <strong>20 min - 30 min</strong>
+              </RegularText>
             }
           />
-          <InfoItem 
-            icon={<CurrencyDollar weight="fill" size={16} />}
+
+          <InfoItem
+            icon={<CurrencyDollar weight="fill" />}
             iconColor={colors["brand-yellow-dark"]}
             text={
-            <RegularText color="text">
-              Pagamento na entrega
-              <br />
-              <strong>Cartão de crédito</strong>
-            </RegularText>
+              <RegularText>
+                Pagamento na entrega
+                <br />
+                <strong>{paymentMethods[state.paymentMethod].label}</strong>
+              </RegularText>
             }
           />
         </OrderDetailsContainer>
-
-        <img src={Ilustration} />
+        <img src={confirmedOrderIllustration} />
       </section>
-    </ConfirmedOrderContainer>
-  )
+    </OrderConfirmedContainer>
+  );
 }
