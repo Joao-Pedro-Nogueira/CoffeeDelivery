@@ -7,6 +7,16 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    ::-webkit-scrollbar {
+      width: 0.45rem;
+    }
+    ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors["brand-yellow-light"]};
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: ${({ theme }) => theme.colors["brand-yellow"]}
+    }
   }
 
   body {
