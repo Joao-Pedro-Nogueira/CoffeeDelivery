@@ -11,12 +11,13 @@ A aplicação possui 3 telas, sendo:
 ## Tecnologias utilizadas neste projeto:
 
 - Vite
-- Styled Components
-- Local Storage
-- Typescript
+- TypeScript
 - Context API
+- Styled Components
+- Hook useReducer
+- Local Storage
 - React Router Dom
 - React Hook Form
-- Validações de formulário com Zod
+- Validação de formulário com Zod
 
 Acesse a aplicação através do Link: https://coffee-delivery-rho-one.vercel.app/ (Desktop)
