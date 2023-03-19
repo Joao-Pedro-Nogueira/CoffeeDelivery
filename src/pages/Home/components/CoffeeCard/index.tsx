@@ -15,10 +15,10 @@ export interface Coffee {
   price: number
 }
 interface CoffeeProps {
-   coffee: Coffee
+  coffee: Coffee
 }
 
-export function CoffeeCard({coffee}: CoffeeProps) {
+export function CoffeeCard({ coffee }: CoffeeProps) {
 
   const [quantity, setQuantity] = useState(1)
 
@@ -42,14 +42,14 @@ export function CoffeeCard({coffee}: CoffeeProps) {
   }
 
   const formatedPrice = formatMoney(coffee.price)
-  return(
+  return (
     <CoffeeCardContainer>
-      <img 
-      src={`/${coffee.photo}`} />
-      
+      <img
+        src={`/${coffee.photo}`} />
+
       <Tag marginBottom={1}>
         {coffee.tags.map((tag) => {
-          return(
+          return (
             <span key={`${coffee.id} ${tag}`}>
               {tag}
             </span>
@@ -72,8 +72,8 @@ export function CoffeeCard({coffee}: CoffeeProps) {
           </TitleText>
         </div>
         <AddCartWrapper>
-          <QuantitySelector 
-            quantity={quantity} 
+          <QuantitySelector
+            quantity={quantity}
             onIncrease={handleIncrease}
             onDecrease={handleDecrease}
           />

@@ -5,6 +5,12 @@ export const InfoItensConteiner = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 0.75rem;
+
+  @media screen and (max-width: 768px) {
+    p {
+      text-align: left;
+    }
+  }
 `
 
 interface InfoItemProps {
@@ -16,7 +22,7 @@ export const IconContainer = styled.div<InfoItemProps>`
   height: 2rem;
   border-radius: 50%;
   padding: 0.5rem;
-  color: ${({theme}) => theme.colors["base-background"]};
+  color: ${({ theme }) => theme.colors["base-background"]};
 
-  background-color: ${({ iconColor }) => iconColor };
+  background-color: ${({ iconColor }) => iconColor};
 `

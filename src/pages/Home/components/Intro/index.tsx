@@ -7,9 +7,9 @@ import { useTheme } from "styled-components";
 
 export function Intro() {
 
-  const {colors} = useTheme()
+  const { colors } = useTheme()
 
-  return(
+  return (
     <IntroContainer>
       <IntroContent className="container">
         <div>
@@ -22,26 +22,26 @@ export function Intro() {
             </RegularText>
           </section>
           <InfosContainer>
-            <InfoItem 
-              icon={<ShoppingCart weight="fill"/>} 
-              text='Compra simples e segura' 
+            <InfoItem
+              icon={<ShoppingCart weight="fill" size={16} />}
+              text='Compra simples e segura'
               iconColor={colors["brand-yellow-dark"]}
             />
-            <InfoItem 
-              icon={<Package weight="fill"/>} 
-              text='Embalagem mantém o café intacto' 
+            <InfoItem
+              icon={<Package weight="fill" size={16} />}
+              text='Embalagem mantém o café intacto'
               iconColor={colors["base-text"]}
             />
-            <InfoItem 
-              icon={<Timer weight="fill"/>} 
-              text='Entrega rápida e rastreada' 
+            <InfoItem
+              icon={<Timer weight="fill" size={16} />}
+              text='Entrega rápida e rastreada'
               iconColor={colors["brand-yellow"]}
             />
-            <InfoItem 
-              icon={<Coffee weight="fill"/>} 
-              text='O café chega fresquinho até você' 
+            <InfoItem
+              icon={<Coffee weight="fill" size={16} />}
+              text='O café chega fresquinho até você'
               iconColor={colors["brand-purple"]}
-            /> 
+            />
           </InfosContainer>
         </div>
         <img src={IntroImg} />

@@ -5,7 +5,7 @@ import { TitleText } from "../../../../components/TextsComponents";
 
 export const IntroContainer = styled.section`
   width: 100%;
-  height: 34rem;
+  min-height: 34rem;
   background: ${({ theme }) => `url(${introBackgroundImg}) no-repeat center,
       linear-gradient(
         0deg,
@@ -14,17 +14,34 @@ export const IntroContainer = styled.section`
         ${theme.colors["base-background"]} 100%
       )`};
   background-size: cover;
+  @media screen and (max-width: 768px) {
+    background: none;
+  }
 
   display: flex;
   align-items: center;
   justify-content: center;
-`
+  `
 
 export const IntroContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
+  
+  @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      div {
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+      }
+  }
 `
 
 export const IntroTitle = styled(TitleText)`

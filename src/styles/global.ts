@@ -26,9 +26,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input-security, text-area, button {
-    font-family: ${({theme }) => theme.fonts.regular};
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-weight: 400;
-    font-size: ${({theme }) => theme.textSizes["text-regular-m"]};
+    font-size: ${({ theme }) => theme.textSizes["text-regular-m"]};
   }
 
   button {

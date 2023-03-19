@@ -33,6 +33,15 @@ export const defaultTheme = {
     "components-tag": "0.625rem",
     "components-button-g": "0.875rem",
     "components-button-s": "0.75rem",
+
+    "title-title-mobile-xl": "2.5rem",
+    "title-title-mobile-l": "1.75rem",
+    "title-title-mobile-m": "1.15rem",
+    "title-title-mobile-s": "1.2rem",
+    "title-title-mobile-xs": "0.875rem",
+    "text-regular-mobile-l": "0.875rem",
+    "text-regular-mobile-m": "0.790rem",
+    "text-regular-mobile-s": "0.75rem",
   },
   fonts: {
     regular: "'Roboto'",

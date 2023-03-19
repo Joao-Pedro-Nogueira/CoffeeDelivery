@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const CoffeeCardContainer = styled.div`
-  width: 100%;
-  background-color: ${({theme}) => theme.colors["base-card"]};
+  width: 250px;
+  background-color: ${({ theme }) => theme.colors["base-card"]};
   border-radius: 6px 36px 6px 36px;
   display: flex;
   flex-direction: column;
@@ -30,17 +30,17 @@ export const Tag = styled.div<TagProps>`
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  margin-top: ${({marginTop})=> [`${marginTop ?? 0}rem`]};
-  margin-bottom: ${({marginBottom})=> [`${marginBottom ?? 0}rem`]};
+  margin-top: ${({ marginTop }) => [`${marginTop ?? 0}rem`]};
+  margin-bottom: ${({ marginBottom }) => [`${marginBottom ?? 0}rem`]};
 
   span {
     padding: 0.25rem 0.5rem;
-    color: ${({theme}) => theme.colors["brand-yellow-dark"]};
-    background-color: ${({theme}) => theme.colors["brand-yellow-light"]};
+    color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
+    background-color: ${({ theme }) => theme.colors["brand-yellow-light"]};
     border-radius: 999px;
-    font-size: ${({theme})=> theme.textSizes["components-tag"]};
+    font-size: ${({ theme }) => theme.textSizes["components-tag"]};
     font-weight: bold;
-    font-family: ${({theme})=> theme.fonts.regular};
+    font-family: ${({ theme }) => theme.fonts.regular};
     line-height: 130%;
     text-transform: uppercase;
   }
@@ -73,14 +73,14 @@ export const AddCartWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${({theme}) => theme.colors["brand-purple-dark"]};
-    color: ${({theme}) => theme.colors["base-card"]};
+    background-color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    color: ${({ theme }) => theme.colors["base-card"]};
     border-radius: 6px;
     margin-left: 0.3rem;
     transition: 0.12s;
 
     &:hover {
-      background-color: ${({theme}) => theme.colors["brand-purple"]};
+      background-color: ${({ theme }) => theme.colors["brand-purple"]};
     }
   }
 `

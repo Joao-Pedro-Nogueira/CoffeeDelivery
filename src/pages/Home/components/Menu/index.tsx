@@ -4,14 +4,14 @@ import { CoffeeCard } from "../CoffeeCard";
 import { CoffeeList, MenuContainer } from "./styles";
 
 export function Menu() {
-  return(
+  return (
     <MenuContainer className="container">
       <TitleText size="l" color="subtitle">
         Nossos cafés
       </TitleText>
       <CoffeeList>
         {coffees.map((coffee) => {
-          return(
+          return (
             <CoffeeCard key={coffee.id} coffee={coffee} />
           )
         })}
