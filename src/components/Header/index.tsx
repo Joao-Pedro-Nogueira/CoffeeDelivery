@@ -11,7 +11,7 @@ export function Header() {
 
   const theme = useTheme()
 
-  return(
+  return (
     <HeaderContainer>
       <div className="container">
         <NavLink to="/Home">
@@ -20,13 +20,13 @@ export function Header() {
 
         <HeaderButtonsContainer>
           <HeaderButton variant="purple">
-            <MapPin size={20} weight='fill'/>
+            <MapPin size={20} weight='fill' />
             Campo Grande, MS
           </HeaderButton>
           <NavLink to="/CompleteOrder">
             <HeaderButton variant='yellow'>
               {cartQuantity >= 1 && <span>{cartQuantity}</span>}
-              <ShoppingCart size={20} weight='fill'/>
+              <ShoppingCart size={20} weight='fill' />
             </HeaderButton>
           </NavLink>
         </HeaderButtonsContainer>

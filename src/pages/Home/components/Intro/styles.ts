@@ -33,6 +33,8 @@ export const IntroContent = styled.div`
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
+      gap: 2rem;
+      margin-top: 1rem;
 
       div {
         text-align: center;
