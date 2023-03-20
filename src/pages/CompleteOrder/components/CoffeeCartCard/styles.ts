@@ -33,6 +33,13 @@ export const ActionsContainer = styled.div`
     max-width: 4.5rem;
     height: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 4.5rem;
+  }
 `;
 
 export const RemoveButton = styled.button`
@@ -41,7 +48,7 @@ export const RemoveButton = styled.button`
   gap: 0.25rem;
   color: ${({ theme }) => theme.colors["base-text"]};
   font-size: 0.75rem;
-  height: 100%;
+  height: 2rem;
   border: none;
   background: ${({ theme }) => theme.colors["base-button"]};
   padding: 0 0.5rem;
