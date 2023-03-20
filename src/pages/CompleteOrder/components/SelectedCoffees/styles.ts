@@ -6,6 +6,10 @@ export const SelectedCoffeesContainer = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   width: 40rem;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const DetailsContainer = styled(SectionBaseStyle)`
